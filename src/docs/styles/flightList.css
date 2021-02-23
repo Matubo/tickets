@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+.flightList {
+  width: 100vw;
+  height: 100vh;
+  background: #e5e5e5;
+}
+.flightListBody {
+  height: 895px;
+  width: 680px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  /* Card */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+.exitButton {
+  position: absolute;
+  right: 31px;
+  top: 26px;
+}
+.exitHeading {
+  position: absolute;
+  right: 69px;
+  top: 26px;
+  width: 80px;
+  height: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 22px;
+  /* or 110% */
+  color: #1157a7;
+  margin: 0;
+}
+.exitImg {
+  position: absolute;
+  top: 31px;
+  right: 31px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+.heading {
+  width: 123px;
+  height: 38px;
+  position: absolute;
+  top: 65px;
+  left: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  /* identical to box height */
+  color: #424242;
+  margin: 0;
+}
+.directionImg {
+  position: absolute;
+  top: 78px;
+  left: 183px;
+  margin: 0;
+}
+.direction {
+  width: 192px;
+  height: 38px;
+  position: absolute;
+  top: 65px;
+  left: 212px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  /* identical to box height */
+
+  color: #424242;
+  margin: 0;
+}
+.departureDate {
+  width: 193px;
+  height: 28px;
+  position: absolute;
+  left: 408px;
+  top: 70px;
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 22px;
+  /* or 88% */
+  text-align: right;
+  letter-spacing: -0.408px;
+  color: #1157a7;
+  margin: 0;
+}
+.departureDateImg {
+  position: absolute;
+  top: 73px;
+  left: 616px;
+  width: 18px;
+  height: 20px;
+  margin: 0;
+}
+.departureCalendar {
+  width: 193px;
+  height: 28px;
+  border: 0px;
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+
+  /* or 88% */
+
+  text-align: right;
+
+  color: #1157a7;
+}
+.departureCalendar {
+  position: absolute;
+  top: 70px;
+  right: 46px;
+}
+.departureCalendar::-webkit-calendar-picker-indicator {
+  background: center / contain no-repeat url("../imgs/calendar.png");
+  height: 18px;
+  width: 20px;
+}
+.photoCarousel {
+  width: 600px;
+  height: 149px;
+  position: absolute;
+  top: 127px;
+  left: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.photo {
+  height: 149px;
+  width: 164px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.photoContainer {
+  height: 149px;
+  width: 164px;
+}
+.photoBlur {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 149px;
+  width: 10px;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 83.85%
+  );
+  z-index: 10000;
+}
+.favorites {
+  position: absolute;
+  width: 300px;
+  height: 21px;
+  left: 50px;
+  top: 307px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  /* or 129% */
+
+  letter-spacing: -0.408px;
+  margin: 0;
+  color: #424242;
+}
+.favoritesCount {
+  color: #1157a7;
+}
+.ticketList {
+  position: absolute;
+  left: 47px;
+  top: 340px;
+  height: 515px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar-button {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 2px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7;
+  border-radius: 2px;
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #1157a7;
+}
+
+::-webkit-resizer {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+/*  */
+
+/*  */
+.ticket {
+  width: 580px;
+  height: 101px;
+  min-height: 101px;
+  position: relative;
+  margin: 1px;
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+.planeImgBox {
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  bottom: 17px;
+  right: 515px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(0, 119, 255, 0.05);
+  margin: 0;
+}
+.planeImg {
+  height: 35px;
+  width: 35px;
+}
+.ticketDeparture {
+  position: absolute;
+  width: 113px;
+  height: 21px;
+  right: 378px;
+  top: 20px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  /* or 129% */
+
+  letter-spacing: -0.408px;
+
+  color: #424242;
+  margin: 0;
+}
+.ticketArrow {
+  position: absolute;
+  top: 28px;
+  right: 354px;
+  margin: 0;
+}
+.ticketArrival {
+  position: absolute;
+  width: 152px;
+  height: 21px;
+  right: 190px;
+  top: 20px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  /* or 129% */
+
+  letter-spacing: -0.408px;
+
+  color: #424242;
+  margin: 0;
+}
+.ticketDepartureDate {
+  position: absolute;
+  width: 92px;
+  height: 21px;
+  right: 399px;
+  top: 41px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  /* or 157% */
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+  margin: 0;
+}
+.ticketDepartureArrow {
+  background: #c4c4c4;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ticketDepartureTime {
+  display: inline-block;
+  width: 45px;
+  height: 21px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  /* or 157% */
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+  margin: 0;
+}
+.airline {
+  position: absolute;
+  width: 94px;
+  height: 18px;
+  right: 397px;
+  top: 61px;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  /* or 157% */
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+}
+.price {
+  position: absolute;
+  left: 459px;
+  top: 57px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 22px;
+  /* or 200% */
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+  margin: 0;
+}
+.priceSum {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 22px;
+  /* or 129% */
+
+  letter-spacing: -0.408px;
+
+  color: #000000;
+  margin: 0;
+  margin-left: 8px;
+}
+.notLiked {
+  position: absolute;
+  top: 17px;
+  right: 19px;
+}
+.liked {
+  position: absolute;
+  top: 17px;
+  right: 19px;
+}

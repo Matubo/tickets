@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { getState } from "redux";
+import LoginComponent from "./docs/elements/loginSection";
+import FlightList from "./docs/elements/flightList";
+import globalStore from "./docs/store/store";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [loginStatus, setLoginStatus] = useState(false);
+
+  function logIn() {
+    localStorage.setItem("loginIn", true);
+    setLoginStatus(true);
+  }
+
+  function logOut() {
+    localStorage.setItem("loginIn", false);
+    setLoginStatus(false);
+  }
+
+  useEffect(() => {
+    console.log("test ");
+    if (localStorage.getItem("loginIn") === "true") {
+      setLoginStatus(true);
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PageChanger
+        status={loginStatus}
+        logOut={logOut}
+        logIn={logIn}
+      ></PageChanger>
     </div>
   );
+}
+
+function PageChanger(props) {
+  const status = props.status;
+  if (status) {
+    return <FlightList callbackFunction={props.logOut}></FlightList>;
+  } else {
+    return <LoginComponent callbackFunction={props.logIn}></LoginComponent>;
+  }
 }
 
 export default App;
