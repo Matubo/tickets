@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/ticketList/static/css/main.135888dc.chunk.css",
+    "main.js": "/ticketList/static/js/main.50be2d25.chunk.js",
+    "main.js.map": "/ticketList/static/js/main.50be2d25.chunk.js.map",
+    "runtime-main.js": "/ticketList/static/js/runtime-main.354a7d0d.js",
+    "runtime-main.js.map": "/ticketList/static/js/runtime-main.354a7d0d.js.map",
+    "static/css/2.a44c59e0.chunk.css": "/ticketList/static/css/2.a44c59e0.chunk.css",
+    "static/js/2.688955eb.chunk.js": "/ticketList/static/js/2.688955eb.chunk.js",
+    "static/js/2.688955eb.chunk.js.map": "/ticketList/static/js/2.688955eb.chunk.js.map",
+    "static/js/3.386a4335.chunk.js": "/ticketList/static/js/3.386a4335.chunk.js",
+    "static/js/3.386a4335.chunk.js.map": "/ticketList/static/js/3.386a4335.chunk.js.map",
+    "index.html": "/ticketList/index.html",
+    "static/css/2.a44c59e0.chunk.css.map": "/ticketList/static/css/2.a44c59e0.chunk.css.map",
+    "static/css/main.135888dc.chunk.css.map": "/ticketList/static/css/main.135888dc.chunk.css.map",
+    "static/js/2.688955eb.chunk.js.LICENSE.txt": "/ticketList/static/js/2.688955eb.chunk.js.LICENSE.txt",
+    "static/media/NY1.e0a9fc40.jpg": "/ticketList/static/media/NY1.e0a9fc40.jpg",
+    "static/media/NY2.a7be6045.jpg": "/ticketList/static/media/NY2.a7be6045.jpg",
+    "static/media/NY3.627491ab.jpg": "/ticketList/static/media/NY3.627491ab.jpg",
+    "static/media/NY4.f65964c8.jpg": "/ticketList/static/media/NY4.f65964c8.jpg",
+    "static/media/loginSection.css": "/ticketList/static/media/background.abeaa0ae.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.354a7d0d.js",
+    "static/css/2.a44c59e0.chunk.css",
+    "static/js/2.688955eb.chunk.js",
+    "static/css/main.135888dc.chunk.css",
+    "static/js/main.50be2d25.chunk.js"
+  ]
+}
