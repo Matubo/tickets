@@ -2,16 +2,18 @@ import { useRef, useState } from "react";
 import React from "react";
 import "../styles/loginSection.css";
 
-
+//регулярные выражения для логина и пароля
 const loginRegExp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Za]{8,}$/;
 
 function LoginComponent(props) {
+  //рефы для получения текущих значений login/password
   const loginRef = useRef(null);
   const passwordRef = useRef(null);
+  //стейт статуса правильности login/password
   const [loginStatus, setLoginStatus] = useState(true);
   const [passwordStatus, setPasswordStatus] = useState(true);
-
+  //проверка соответствия login/password regExp
   function dataValidation() {
     let emailCheckResult = loginRegExp.test(loginRef.current.value);
     let passwordCheckResult = passwordRegExp.test(passwordRef.current.value);
@@ -51,6 +53,7 @@ function LoginComponent(props) {
   );
 }
 
+//возврат поля ввода login в зависимости от результатов проверки
 function UsernameFormfield(props) {
   return props.loginStatus ? (
     <React.Fragment>
@@ -70,6 +73,8 @@ function UsernameFormfield(props) {
     </React.Fragment>
   );
 }
+
+//возврат поля ввода password в зависимости от результатов проверки
 function PasswordFormfield(props) {
   return props.passwordStatus ? (
     <React.Fragment>
