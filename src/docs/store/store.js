@@ -7,12 +7,12 @@ function storeReducer(
   state = {
     listOfTickets: [],
     liked: 0,
-    fetching: true,
+    fetching: false,
     firstInit: true,
   },
   action
 ) {
-  if (action.type === "fetching") {
+  if (action.type === "getNewListTickets") {
     return state;
   }
   if (action.type === "setNewListTickets") {

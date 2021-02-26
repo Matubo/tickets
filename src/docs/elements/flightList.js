@@ -16,7 +16,7 @@ function FlightList(props) {
 
   function changeData(value) {
     setDateState(value); //установка стейта новой даты
-    store.dispatch({ type: "fetching" }); //передача действия в сагу для отработки "асинхронного" запроса
+    store.dispatch({ type: "getNewListTickets" }); //передача действия в сагу для отработки "асинхронного" запроса
   }
 
   return (

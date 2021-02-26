@@ -4,7 +4,6 @@ import ticketArrow2 from "../imgs/ticketArrow2.png";
 import liked from "../imgs/liked.png";
 import notLiked from "../imgs/notLiked.png";
 import { connect } from "react-redux";
-import { ReactComponent } from "react";
 import store from "../store/store";
 import "../styles/ticket.css";
 
@@ -24,10 +23,10 @@ const monthMap = {
   12: "December",
 };
 
-//билеты, принимают на вход текущее состояние storage и выбранную дату
+//билеты, принимают на вход текущее состояние store и выбранную дату
 function Tickets(props) {
   //если store только инициализирован
-  if (props.state.firstInit) {
+  if (!props.date) {
     return <div className="selectDate">Выберите дату</div>;
   }
   //если стор в состоянии запроса
@@ -37,9 +36,6 @@ function Tickets(props) {
   //если стор оказался пуст
   if (props.state.listOfTickets.length == 0) {
     return <div className="empty">Билетов не найдено</div>;
-  }
-  if (!props.date) {
-    return <div className="selectDate">Выберите дату</div>;
   }
   //нарезаем дату
   let date = props.date.split("-");
