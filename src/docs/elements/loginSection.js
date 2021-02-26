@@ -20,12 +20,8 @@ function LoginComponent(props) {
     if (emailCheckResult && passwordCheckResult) {
       props.callbackFunction();
     }
-    if (!emailCheckResult) {
-      setLoginStatus(false);
-    }
-    if (!passwordCheckResult) {
-      setPasswordStatus(false);
-    }
+    emailCheckResult ? setLoginStatus(true) : setLoginStatus(false);
+    passwordCheckResult ? setPasswordStatus(true) : setPasswordStatus(false);
   }
 
   return (
