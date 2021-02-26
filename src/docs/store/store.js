@@ -12,7 +12,7 @@ function storeReducer(
   },
   action
 ) {
-  if (action.type === "getNewListTickets") {
+  if (action.type === "getNewListOfTickets") {
     return state;
   }
   if (action.type === "setNewListTickets") {

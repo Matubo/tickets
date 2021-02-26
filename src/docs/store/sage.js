@@ -20,7 +20,7 @@ function* fetchTickets(action) {
 }
 
 function* sage() {
-  yield takeLatest("getNewListTickets", fetchTickets);
+  yield takeLatest("getNewListOfTickets", fetchTickets);
 }
 
 export default sage;

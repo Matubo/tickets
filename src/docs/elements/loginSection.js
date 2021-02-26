@@ -18,7 +18,7 @@ function LoginComponent(props) {
     let emailCheckResult = loginRegExp.test(loginRef.current.value);
     let passwordCheckResult = passwordRegExp.test(passwordRef.current.value);
     if (emailCheckResult && passwordCheckResult) {
-      props.callbackFunction();
+      props.callbackLoginFunction();
     }
     emailCheckResult ? setLoginStatus(true) : setLoginStatus(false);
     passwordCheckResult ? setPasswordStatus(true) : setPasswordStatus(false);

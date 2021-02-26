@@ -39,9 +39,9 @@ function App() {
 function PageChanger(props) {
   const status = props.status;
   if (status) {
-    return <FlightList callbackFunction={props.logOut}></FlightList>;
+    return <FlightList callbackLogoutFunction={props.logOut}></FlightList>;
   } else {
-    return <LoginComponent callbackFunction={props.logIn}></LoginComponent>;
+    return <LoginComponent callbackLoginFunction={props.logIn}></LoginComponent>;
   }
 }
 

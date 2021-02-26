@@ -16,7 +16,7 @@ function FlightList(props) {
 
   function changeData(value) {
     setDateState(value); //установка стейта новой даты
-    store.dispatch({ type: "getNewListTickets" }); //передача действия в сагу для отработки "асинхронного" запроса
+    store.dispatch({ type: "getNewListOfTickets" }); //передача действия в сагу для отработки "асинхронного" запроса
   }
 
   return (
@@ -25,7 +25,7 @@ function FlightList(props) {
       <div
         className="exitButton"
         onClick={() => {
-          props.callbackFunction();
+          props.callbackLogoutFunction();
         }}
       >
         <p className="exitHeading">Выйти</p>
@@ -42,9 +42,6 @@ function FlightList(props) {
           className="departureCalendar"
           onChange={(evt) => {
             changeData(evt.target.value);
-            {
-              /* Отлов изменения даты */
-            }
           }}
         ></input>
         {/* Заголовок/выбор даты */}
