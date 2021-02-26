@@ -1,8 +1,6 @@
 import "./App.css";
-import { getState } from "redux";
 import LoginComponent from "./docs/elements/loginSection";
 import FlightList from "./docs/elements/flightList";
-import globalStore from "./docs/store/store";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -41,7 +39,9 @@ function PageChanger(props) {
   if (status) {
     return <FlightList callbackLogoutFunction={props.logOut}></FlightList>;
   } else {
-    return <LoginComponent callbackLoginFunction={props.logIn}></LoginComponent>;
+    return (
+      <LoginComponent callbackLoginFunction={props.logIn}></LoginComponent>
+    );
   }
 }
 
