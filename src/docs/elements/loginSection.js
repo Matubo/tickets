@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/loginSection.css";
 
 const loginRegExp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*?]{8,}$/;
+const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Za]{8,}$/;
 
 function LoginComponent(props) {
   const loginRef = useRef(null);
@@ -12,15 +12,15 @@ function LoginComponent(props) {
   const [passwordStatus, setPasswordStatus] = useState(true);
 
   function dataValidation() {
-    let testEmail = loginRegExp.test(loginRef.current.value);
-    let testPassword = passwordRegExp.test(passwordRef.current.value);
-    if (testEmail && testPassword) {
+    let emailCheckResult = loginRegExp.test(loginRef.current.value);
+    let passwordCheckResult = passwordRegExp.test(passwordRef.current.value);
+    if (emailCheckResult && passwordCheckResult) {
       props.callbackFunction();
     }
-    if (!testEmail) {
+    if (!emailCheckResult) {
       setLoginStatus(false);
     }
-    if (!testPassword) {
+    if (!passwordCheckResult) {
       setPasswordStatus(false);
     }
   }
@@ -31,53 +31,15 @@ function LoginComponent(props) {
         <div className="loginBox">
           <h3 className="loginHeading">Simple Flight Check</h3>
 
-          {loginStatus ? (
-            <React.Fragment>
-              <p className="usernameHeading">Логин:</p>
-              <input
-                type="text"
-                ref={loginRef}
-                className="usernameInput"
-              ></input>
-              <p className="usernameError"></p>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <p className="usernameHeading loginErrorHeading">Логин:</p>
-              <input
-                type="text"
-                ref={loginRef}
-                className="usernameInput loginErrorInput"
-              ></input>
-              <p className="usernameError">
-                Логин не соответствует требованиям
-              </p>
-            </React.Fragment>
-          )}
+          <UsernameFormfield
+            loginRef={loginRef}
+            loginStatus={loginStatus}
+          ></UsernameFormfield>
 
-          {passwordStatus ? (
-            <React.Fragment>
-              <p className="passwordHeading">Пароль:</p>
-              <input
-                type="password"
-                ref={passwordRef}
-                className="passwordInput"
-              ></input>
-              <p className="passwordError"></p>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <p className="passwordHeading loginErrorHeading">Пароль:</p>
-              <input
-                type="password"
-                ref={passwordRef}
-                className="passwordInput loginErrorInput"
-              ></input>
-              <p className="passwordError">
-                Пароль не соответствует требованиям
-              </p>
-            </React.Fragment>
-          )}
+          <PasswordFormfield
+            passwordStatus={passwordStatus}
+            passwordRef={passwordRef}
+          ></PasswordFormfield>
 
           <button className="loginButton" onClick={dataValidation}>
             Войти
@@ -85,6 +47,49 @@ function LoginComponent(props) {
         </div>
       </div>
     </div>
+  );
+}
+
+function UsernameFormfield(props) {
+  return props.loginStatus ? (
+    <React.Fragment>
+      <p className="usernameHeading">Логин:</p>
+      <input type="text" ref={props.loginRef} className="usernameInput"></input>
+      <p className="usernameError"></p>
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      <p className="usernameHeading loginErrorHeading">Логин:</p>
+      <input
+        type="text"
+        ref={props.loginRef}
+        className="usernameInput loginErrorInput"
+      ></input>
+      <p className="usernameError">Логин не соответствует требованиям</p>
+    </React.Fragment>
+  );
+}
+function PasswordFormfield(props) {
+  return props.passwordStatus ? (
+    <React.Fragment>
+      <p className="passwordHeading">Пароль:</p>
+      <input
+        type="password"
+        ref={props.passwordRef}
+        className="passwordInput"
+      ></input>
+      <p className="passwordError"></p>
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      <p className="passwordHeading loginErrorHeading">Пароль:</p>
+      <input
+        type="password"
+        ref={props.passwordRef}
+        className="passwordInput loginErrorInput"
+      ></input>
+      <p className="passwordError">Пароль не соответствует требованиям</p>
+    </React.Fragment>
   );
 }
 
