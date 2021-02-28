@@ -1,7 +1,7 @@
 let objectTemplate = {
   arrival: "Moscow (SVO)",
   destination: "New York City (JFK)",
-  airline: "Aeroflot",
+  airline: "Pobeda",
   liked: false,
 };
 

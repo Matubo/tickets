@@ -1,65 +1,48 @@
 import "../styles/flightList.css";
 import arrowImg from "../imgs/arrow.png";
-import exitImg from "../imgs/exit.png";
-import Tickets from "../elements/ticket";
+import TicketList from "./ticketList";
 import PhotoCarousel from "../elements/photoCarousel";
+import ExitButton from "../elements/exitButton";
+import Favorites from "../elements/favorites";
 import store from "../store/store";
 import { useState } from "react";
 
 function FlightList(props) {
   const [likeState, setLikeState] = useState(0); //стейт для обновления количества сердечек
-  const [dateState, setDateState] = useState(undefined); //стейт выбранной даты
+  const [currentDateState, setCurrentDateState] = useState(undefined); //стейт выбранной даты
 
   store.subscribe(() => {
     setLikeState(store.getState().liked); //подписка на количество сердечек
   });
 
   function changeData(value) {
-    setDateState(value); //установка стейта новой даты
+    setCurrentDateState(value); //установка стейта новой даты
     store.dispatch({ type: "getNewListOfTickets" }); //передача действия в сагу для отработки "асинхронного" запроса
   }
 
   return (
     <div className="flightList">
-      {/* Кнопка выхода */}
-      <div
-        className="exitButton"
-        onClick={() => {
-          props.callbackLogoutFunction();
-        }}
-      >
-        <p className="exitHeading">Выйти</p>
-        <img className="exitImg" src={exitImg}></img>
-      </div>
-      {/* Кнопка выхода */}
+      <ExitButton
+        callbackLogoutFunction={props.callbackLogoutFunction}
+      ></ExitButton>
       {/* Заголовок/выбор даты */}
       <div className="flightListBody">
         <p className="heading">Вылеты</p>
         <img src={arrowImg} className="directionImg"></img>
         <p className="direction">SVO - JFK</p>
         <input
-          type="date"
           className="departureCalendar"
+          type="date"
           onChange={(evt) => {
             changeData(evt.target.value);
           }}
         ></input>
         {/* Заголовок/выбор даты */}
-        {/* Карусель */}
         <PhotoCarousel></PhotoCarousel>
-        {/* Карусель */}
-        {/* Строка избранного */}
-        <p className="favorites">
-          Добавлено в избранное:
-          <span className="favoritesCount"> {likeState} </span>
-          рейсов
-        </p>
-        {/* Строка избранного */}
-        {/* Список билетов */}
+        <Favorites likes={likeState}></Favorites>
         <div className="ticketList">
-          <Tickets store={store} date={dateState}></Tickets>
+          <TicketList store={store} date={currentDateState}></TicketList>
         </div>
-        {/* Список билетов */}
       </div>
     </div>
   );

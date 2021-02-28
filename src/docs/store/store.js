@@ -22,7 +22,7 @@ function storeReducer(
       fetching: state.fetching,
     };
   }
-  if (action.type === "addLikedTickets") {
+  if (action.type === "addLike") {
     console.log("test");
     return {
       listOfTickets: state.listOfTickets,
@@ -30,7 +30,7 @@ function storeReducer(
       fetching: state.fetching,
     };
   }
-  if (action.type === "removeLikedTickets") {
+  if (action.type === "removeLike") {
     return {
       listOfTickets: state.listOfTickets,
       liked: state.liked - 1,
