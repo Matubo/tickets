@@ -126,6 +126,13 @@
   position: absolute;
   top: 70px;
   right: 46px;
+  background-color: white;
+}
+@-moz-document url-prefix() {
+  .departureCalendar {
+    border: 2px #424242 solid;
+    border-radius: 3px;
+  }
 }
 .departureCalendar::-webkit-calendar-picker-indicator {
   background: center / contain no-repeat url("../imgs/calendar.png");
@@ -196,6 +203,9 @@
   flex-direction: column;
   overflow: auto;
   overflow-x: hidden;
+
+  scrollbar-color: #1157a7 #e7e7e7;
+  scrollbar-width: thin;
 }
 ::-webkit-scrollbar-button {
   background-image: url("");
