@@ -1,7 +1,6 @@
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import createTicketsObject from "./objectForStore";
 
-// воркер Saga: будет запускаться на действия типа `USER_FETCH_REQUESTED`
 
 function* fetchTickets(action) {
   yield put({ type: "startFetching" });
