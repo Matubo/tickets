@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tickets/static/css/main.5d9edb63.css",
+    "main.js": "/tickets/static/js/main.adb266a6.js",
+    "static/js/787.b0969b30.chunk.js": "/tickets/static/js/787.b0969b30.chunk.js",
+    "static/media/background.png": "/tickets/static/media/background.abeaa0aef2688a1912c6.png",
+    "static/media/NY2.jpg": "/tickets/static/media/NY2.a7be60451c06f02ffd23.jpg",
+    "static/media/NY1.jpg": "/tickets/static/media/NY1.e0a9fc40d417823c68b5.jpg",
+    "static/media/NY3.jpg": "/tickets/static/media/NY3.627491ab0e05cf2acbcf.jpg",
+    "static/media/NY4.jpg": "/tickets/static/media/NY4.f65964c864862798f4f6.jpg",
+    "index.html": "/tickets/index.html",
+    "main.5d9edb63.css.map": "/tickets/static/css/main.5d9edb63.css.map",
+    "main.adb266a6.js.map": "/tickets/static/js/main.adb266a6.js.map",
+    "787.b0969b30.chunk.js.map": "/tickets/static/js/787.b0969b30.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d9edb63.css",
+    "static/js/main.adb266a6.js"
+  ]
+}
